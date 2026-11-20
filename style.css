@@ -85,16 +85,16 @@
    Change a variable once here, and every place that uses it changes. */
 :root {
     /* ----- Your assistant's main colors ----- */
-    --primary-color: #4721a7;   /* Main brand color (deep violet). Used in the header gradient, user message bubbles, buttons, the outline around a box you click into, and the 1st typing dot. */
-    --secondary-color: #0f050d; /* Partner color (almost black). It is the second half of every gradient (header, user bubbles, buttons) and the 2nd typing dot. Try a bright color like #e05cc8 (pink) for a bolder look. */
+    --primary-color: #ff7700;   /* Main brand color (deep violet). Used in the header gradient, user message bubbles, buttons, the outline around a box you click into, and the 1st typing dot. */
+    --secondary-color: #fbff00; /* Partner color (almost black). It is the second half of every gradient (header, user bubbles, buttons) and the 2nd typing dot. Try a bright color like #e05cc8 (pink) for a bolder look. */
     --accent: #ffd166;          /* Highlight color (sunny yellow). Used for headings inside the bot's replies and the 3rd typing dot. */
 
     /* ----- Backgrounds & text ----- */
-    --background: #0f1030;      /* The color behind the whole page (dark navy). */
-    --surface: #1b1d44;         /* The color of the big cards: the chat box. */
-    --surface-2: #262a5a;       /* A slightly lighter color for "inner" areas: the bot's message bubbles and the typing boxes. */
-    --text-primary: #f2f1ff;    /* Main text color (almost white). If you make the backgrounds light, make this dark! */
-    --text-secondary: #a7abdb;  /* Softer text color (light lavender) for labels and small notes. */
+    --background: #f9a508;      /* The color behind the whole page (dark navy). */
+    --surface: #ffe600;         /* The color of the big cards: the chat box. */
+    --surface-2: #ffa200;       /* A slightly lighter color for "inner" areas: the bot's message bubbles and the typing boxes. */
+    --text-primary: #4a3007;    /* Main text color (almost white). If you make the backgrounds light, make this dark! */
+    --text-secondary: #483c05;  /* Softer text color (light lavender) for labels and small notes. */
 
     /* ----- The emoji your assistant uses as its face ----- */
     /* --bot-face: "🤖"; */       /* Shown in the round badge at the top AND next to every bot message. Swap in any emoji, like "🦄", "🐱" or "🌟". Keep the quotation marks! */
@@ -141,12 +141,13 @@ body {
        Each radial-gradient is a round, blurry glow. Read them like:
        radial-gradient(SIZE at LEFT-POSITION TOP-POSITION, GLOW COLOR, fades to transparent by X%).
        The first glow in the list is drawn on top. */
-    background:
-        radial-gradient(60rem 60rem at 12% -10%, rgba(139, 92, 255, 0.35), transparent 60%),  /* Purple glow peeking in from the top-left. */
-        radial-gradient(50rem 50rem at 110% 10%, rgba(224, 92, 200, 0.28), transparent 55%), /* Pink glow from just off the right edge. */
-        radial-gradient(45rem 45rem at 50% 120%, rgba(255, 209, 102, 0.14), transparent 60%),/* Faint yellow glow from below the bottom. */
-        var(--background);       /* The solid background color underneath all the glows. */
-    background-attachment: fixed; /* Keeps the glows still while you scroll, instead of scrolling away with the page. */
+     background-image:url(assets/Orangeandyellowbackground.avif);
+       /*background:
+      /*  radial-gradient(60rem 60rem at 12% -10%, rgba(139, 92, 255, 0.35), transparent 60%),  /* Purple glow peeking in from the top-left. */
+       /* radial-gradient(50rem 50rem at 110% 10%, rgba(224, 92, 200, 0.28), transparent 55%), /* Pink glow from just off the right edge. */
+       /* radial-gradient(45rem 45rem at 50% 120%, rgba(255, 209, 102, 0.14), transparent 60%),/* Faint yellow glow from below the bottom. */
+       /* var(--background);       /* The solid background color underneath all the glows. */
+    /*background-attachment: fixed; /* Keeps the glows still while you scroll, instead of scrolling away with the page. */
 }
 
 
@@ -228,7 +229,7 @@ body {
 /* The big title ("Chatbot"). */
 .header h1 {
     position: relative;         /* Keeps the title above the shine layer. */
-    font-family: 'Baloo 2', 'Nunito', sans-serif; /* A rounder, bolder font for the title. Baloo 2 is loaded from Google Fonts in index.html. */
+    font-family: 'Shantell Sans', 'Nunito', sans-serif; /* A rounder, bolder font for the title. Baloo 2 is loaded from Google Fonts in index.html. */
     font-size: 2.6rem;          /* Title size. */
     font-weight: 800;           /* How thick the letters are: 400 is normal, 700 is bold, 800 is extra bold. */
     letter-spacing: 0.5px;      /* Adds a little extra space between letters. */
@@ -436,10 +437,10 @@ body {
     align-self: flex-end;       /* Pushes your messages to the right side. */
     margin-left: auto;          /* Also pushes it right, as a backup. */
     background: var(--brand-gradient); /* Fills your bubble with the brand gradient. Try var(--accent) for a solid color. */
-    color: #fff;                /* White text. */
+    color: #484402;                /* White text. */
     font-weight: 600;           /* Semi-bold text. */
     border-bottom-right-radius: 6px; /* Makes the bottom-right corner less round, like a speech-bubble "tail". */
-    box-shadow: 0 8px 18px rgba(139, 92, 255, 0.35); /* A purple glow under the bubble. */
+    box-shadow: 0 8px 18px rgba(239, 212, 10, 0.35); /* A purple glow under the bubble. */
 }
 
 /* Assistant bubble: glassy card with a floating avatar face */
@@ -512,7 +513,7 @@ body {
     display: flex;              /* Puts the text box and the Send button side by side. */
     gap: 0.75rem;               /* Space between the text box and the button. */
     padding: 1.1rem 1.25rem;    /* Space inside the strip. */
-    background: rgba(0, 0, 0, 0.2); /* A see-through dark fill to set it apart from the messages. */
+    background: rgba(98, 57, 3, 0.2); /* A see-through dark fill to set it apart from the messages. */
     border-top: 1px solid var(--border); /* A thin line along the top of the strip. */
 }
 
@@ -529,13 +530,13 @@ body {
     transition: border-color var(--transition-speed), box-shadow var(--transition-speed); /* Fades the border and glow smoothly when you click in or out. */
 }
 
-.input-area input::placeholder { color: rgba(167, 171, 219, 0.6); } /* The faded "Type your message here..." hint color. */
+.input-area input::placeholder { color: rgba(62, 47, 4, 0.6); } /* The faded "Type your message here..." hint color. */
 
 /* How the message box looks while you are typing in it. */
 .input-area input:focus {
     outline: none;              /* Removes the browser's default outline. */
     border-color: var(--primary-color); /* The border turns your primary color. */
-    box-shadow: 0 0 0 4px rgba(117, 93, 176, 0.22); /* A soft 4px purple glow ring. */
+    box-shadow: 0 0 0 4px rgba(137, 99, 4, 0.22); /* A soft 4px purple glow ring. */
 }
 
 /* Every button on the page (right now, just "Send"). */
@@ -622,7 +623,7 @@ button:disabled {
 
 /* Headings in the bot's replies. */
 .message.assistant h1, .message.assistant h2, .message.assistant h3 {
-    font-family: 'Baloo 2', 'Nunito', sans-serif; /* Same rounded font as the main title. */
+    font-family: 'Baloo +2', 'Nunito', sans-serif; /* Same rounded font as the main title. */
     margin: 0.5rem 0 0.25rem;   /* 0.5rem above, nothing on the sides, 0.25rem below. */
     color: var(--accent);       /* Headings use your accent color. */
 }
